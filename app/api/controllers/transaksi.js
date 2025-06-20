@@ -127,7 +127,6 @@ module.exports = {
 
    console.log({paketTrakhir: userData?.orders[0]?.isp_id});
 
-   console.log(payload.paket);
    let getOrder;
    do {
     charset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -157,7 +156,7 @@ module.exports = {
 
    const newOrder = await userData.createOrder({
     order_id: order_id,
-    isp_id: payload.paket || userData?.orders[0]?.isp_id,
+    isp_id: payload.isp_id || userData?.orders[0]?.isp_id,
     tanggal_mulai,
     tanggal_berakhir,
     created_by: user?.user_id,

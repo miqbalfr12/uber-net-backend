@@ -164,7 +164,6 @@ module.exports = {
     order.tanggal = order.created_at.split("T")[0];
     order.speed = order.paket.speed;
     order.harga = order.paket.harga;
-    console.log(order);
     if (order.status === "kadaluarsa") order.aksi = ["viewOrder"];
     if (order.status === "aktif" || order.status === "non_aktif") {
      order.aksi = [order?.pelanggan?.wag ? "sendSettlement" : "", "settlement"];
