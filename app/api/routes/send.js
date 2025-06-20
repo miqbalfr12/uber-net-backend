@@ -55,7 +55,7 @@ Besar Tagihan : Rp. ${formattedHarga}
 Masa aktif s/d ${tanggalAkhirStr}
 
 Ket : ${
-    req.body.status === "lunas"
+    req.body.status === "aktif"
      ? "LUNAS ✅"
      : req.body.status === "kadaluarsa"
      ? "KADALUARSA ❌"
@@ -148,7 +148,7 @@ Besar Tagihan : Rp. ${formattedHarga}
 Masa aktif s/d ${tanggalAkhirStr}
 
 Ket : ${
-      order.status === "lunas"
+      order.status === "aktif"
        ? "LUNAS ✅"
        : order.status === "kadaluarsa"
        ? "KADALUARSA ❌"
