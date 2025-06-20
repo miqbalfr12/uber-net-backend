@@ -98,8 +98,10 @@ router.post("/tagihan", isLoginUser, async (req, res) => {
        user.orders[0].paket.speed
       }\nNominal: Rp ${parseInt(user.orders[0].paket.harga).toLocaleString(
        "id-ID"
-      )}\nTanggal Mulai: ${user.orders[0].tanggal_mulai}\nTanggal Berakhir: ${
-       user.orders[0].tanggal_berakhir
+      )}\nTanggal Mulai: ${
+       user.orders[0].tanggal_mulai.toISOString().split("T")[0]
+      }\nTanggal Berakhir: ${
+       user.orders[0].tanggal_berakhir.toISOString().split("T")[0]
       }\n\nStatus: ${user.orders[0].status}${
        user.orders[0].status === "menunggu_pembayaran"
         ? `\n\nSilahkan lakukan pembayaran diwebsite resmi kami!`
