@@ -54,7 +54,13 @@ Besar Tagihan : Rp. ${formattedHarga}
 
 Masa aktif s/d ${tanggalAkhirStr}
 
-Ket : ${req.body.status === "lunas" ? "LUNAS ✅" : "BELUM LUNAS ❌"}
+Ket : ${
+    req.body.status === "lunas"
+     ? "LUNAS ✅"
+     : order.status === "kadaluarsa"
+     ? "KADALUARSA ❌"
+     : "MENUNGGU PEMBAYARAN"
+   }
 
 INFO PEMBAYARAN TRANSFER
 Rekening Pembayaran :
