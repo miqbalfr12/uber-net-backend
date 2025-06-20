@@ -57,7 +57,7 @@ Masa aktif s/d ${tanggalAkhirStr}
 Ket : ${
     req.body.status === "lunas"
      ? "LUNAS ✅"
-     : order.status === "kadaluarsa"
+     : req.body.status === "kadaluarsa"
      ? "KADALUARSA ❌"
      : "MENUNGGU PEMBAYARAN"
    }
