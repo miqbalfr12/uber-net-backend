@@ -51,8 +51,8 @@ module.exports = {
   const dataUserJson = JSON.parse(JSON.stringify(dataUser));
 
   dataUserJson
-   .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
    .filter((item) => item.deleted_at === null)
+   .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
    .map((item, index) => {
     item.no = index + 1;
     console.log(item.wag);
