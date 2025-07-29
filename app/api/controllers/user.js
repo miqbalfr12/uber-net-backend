@@ -52,6 +52,7 @@ module.exports = {
 
   dataUserJson
    .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+   .filter((item) => item.deleted_at === null)
    .map((item, index) => {
     item.no = index + 1;
     console.log(item.wag);
