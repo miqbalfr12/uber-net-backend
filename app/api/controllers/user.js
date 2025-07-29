@@ -51,7 +51,6 @@ module.exports = {
   const dataUserJson = JSON.parse(JSON.stringify(dataUser));
 
   dataUserJson
-   .filter((item) => item.deleted_at === null)
    .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
    .map((item, index) => {
     item.no = index + 1;
@@ -66,7 +65,7 @@ module.exports = {
      ];
    });
 
-  res.status(200).json(dataUserJson);
+  res.status(200).json(dataUserJson.filter((item) => item.deleted_at === null));
  },
  getProfile: async (req, res) => {
   const user = req.user;
