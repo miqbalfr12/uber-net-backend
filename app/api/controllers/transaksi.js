@@ -456,9 +456,12 @@ module.exports = {
        {
         model: ISP,
         as: "paket",
-        where: {
-         isp_id: paket,
-        },
+        where:
+         paket === "All"
+          ? {}
+          : {
+             isp_id: paket,
+            },
        },
       ],
      },
@@ -561,9 +564,12 @@ module.exports = {
        {
         model: ISP,
         as: "paket",
-        where: {
-         isp_id: paket,
-        },
+        where:
+         paket === "All"
+          ? {}
+          : {
+             isp_id: paket,
+            },
        },
       ],
      },
