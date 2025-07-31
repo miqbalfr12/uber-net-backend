@@ -1,7 +1,7 @@
 const Midtrans = require("midtrans-client");
 
 let snap = new Midtrans.Snap({
- isProduction: false,
+ isProduction: true,
  serverKey: process.env.MIDTRANS_SERVER_KEY,
  clientKey: process.env.MIDTRANS_CLIENT_KEY,
 });
